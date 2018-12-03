@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
   <script src="https://unpkg.com/stickyfilljs@2.0.5/dist/stickyfill.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
@@ -48,31 +49,10 @@
       <div class='text' data-width='50%' data-index='2'>
         <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
       </div>
-    </article>
-    
-    <!--  Graphic on the right   -->
-    <figure id='graphic1' class='graphic'>
-      <div class='bar-outer'>
-        <div class='bar-inner'></div>
-      </div>
-    </figure>
-  </div>
-
-  <h4 class="center gray">
-    Section 2 Title
-  </h4>
-
-  <p class="limited-width">
-    OVERVIEW - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-  </p>
-
-  <div class='scroll'>
-    <!--  Text on the left   -->
-    <article>
-      <div class='text' data-width='10%' data-index='3'>
+      <div class='text' data-width='50%' data-index='3'>
         <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
       </div>
-      <div class='text' data-width='90%' data-index='4'>
+      <div class='text' data-width='50%' data-index='4'>
         <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
       </div>
       <div class='text' data-width='50%' data-index='5'>
@@ -81,15 +61,18 @@
     </article>
     
     <!--  Graphic on the right   -->
-    <figure id='graphic2' class='graphic'>
-      <div class='bar-outer'>
-        <div class='bar-inner'></div>
+    <figure id='graphic1' class='graphic'>
+      <div id="slidercontainer">
+        <label class="left gray">Wine reviews with rating at least <b id="sliderVal">80</b> out of 100</label>
+        <input type="range" id="slider" min="80" max="100" value="80"/>
+        <label class="left">80</label>
+        <label class="right">100</label>
       </div>
-    </figure>     
+    </figure>
   </div>
 
   <h4 class="center gray">
-    Section 3 Title
+    Section 2 Title
   </h4>
 
   <p class="limited-width">
@@ -111,10 +94,49 @@
     </article>
     
     <!--  Graphic on the right   -->
-    <figure id='graphic3' class='graphic'>
-      <div class='bar-outer'>
-        <div class='bar-inner'></div>
+    <figure id='graphic2' class='graphic'>
+      <div id="radiocontainer">
+        <label>
+        <input name="variety" id='radioBordeaux' value="Bordeaux-style Red Blend" class="with-gap" type="radio" onchange="updateLineChart(this.value)" checked />
+        <span>Bordeaux-style Red Blend</span>
+        </label>
+        <label>
+        <input name="variety" id='radioChardonnay' value="Chardonnay" class="with-gap" type="radio" onchange="updateLineChart(this.value)"/>
+        <span>Chardonnay</span>
+        </label>
+        <label>
+        <input name="variety" id='radioPinot' value="Pinot Noir" class="with-gap" type="radio" onchange="updateLineChart(this.value)"/>
+        <span>Pinot Noir</span>
+        </label>
       </div>
+      
+    </figure>     
+  </div>
+
+  <h4 class="center gray">
+    Section 3 Title
+  </h4>
+
+  <p class="limited-width">
+    OVERVIEW - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+
+  <div class='scroll'>
+    <!--  Text on the left   -->
+    <article>
+      <div class='text' data-width='10%' data-index='9'>
+        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+      </div>
+      <div class='text' data-width='90%' data-index='10'>
+        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+      </div>
+      <div class='text' data-width='50%' data-index='11'>
+        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+      </div>
+    </article>
+    
+    <!--  Graphic on the right   -->
+    <figure id='graphic3' class='graphic'>
     </figure>     
   </div>
 

@@ -87,19 +87,96 @@ body {
   top: 5vh;
 }
 
-.scroll figure.graphic .bar-outer {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 90%;
-  height: 4rem;
-  background-color: #fff;
+#slidercontainer {
+  margin: 1rem auto 2rem auto;
+  width: 80%;
 }
-.scroll figure.graphic .bar-inner {
-  width: 10%;
-  height: 100%;
-  transition: width 1s ease-in-out;
+
+#slider {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none !important;
+  height: 10px;
+  margin: 0 auto;
+  opacity: 0.8;
+  color: #fff;
+  transition: opacity .2s;
+  -webkit-transition: .2s; 
+}
+
+#slider:hover {
+  opacity: 1;
+}
+
+#slider::-webkit-slider-thumb {
   background-color: #722f37;
+}
+
+#slider::-moz-range-thumb {
+  background-color: #722f37;
+}
+
+#slider::-ms-thumb {
+  background-color: #722f37;
+}
+
+svg text{
+  font-family: 'Bitter', serif;
+}
+
+#radiocontainer  {
+  margin: 1rem auto;
+  width: 95%;
+}
+
+[type="radio"].with-gap:checked + span:before{
+  border-color: #722f37;
+}
+
+[type="radio"].with-gap:checked + span:after {
+  background-color: #722f37;
+  border-color: #722f37;
+}
+
+[type="radio"].with-gap:checked + span {
+  color: #722f37;
+  font-weight: bold;
+}
+
+[type="radio"].with-gap + span {
+  font-family: 'Bitter', serif;
+  margin-right: 2rem;
+}
+
+.tooltip { 
+  position: absolute;
+  text-align: center;     
+  width: 160px;          
+  height: 5rem;         
+  padding: 2px;
+  font-size: 0.8rem;   
+  border-radius: 8px;     
+  pointer-events: none;     
+}
+
+#line_FR {
+  fill: none;
+  stroke: #92c5de;
+  stroke-width: 3;
+}
+
+.dot_FR {
+  fill: #92c5de;
+  stroke: #92c5de;
+}
+
+#line_US {
+  fill: none;
+  stroke: #ec0040;
+  stroke-width: 3;
+}
+
+.dot_US {
+  fill: #ec0040;
+  stroke: #ec0040;
 }
