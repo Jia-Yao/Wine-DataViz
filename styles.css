@@ -180,3 +180,7 @@ svg text{
   fill: #ec0040;
   stroke: #ec0040;
 }
+
+.dot {
+  stroke-width: 2;
+}
