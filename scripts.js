@@ -177,19 +177,36 @@ function updateBarChart(rating) {
     $('#slider').val(rating);
     $('#sliderVal').text(rating);
     datasetBarChart[rating - 80].forEach(function(element) {
-      svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
+      if (element.count == 0){
+        svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
         .attr('y', element.count == 0 ? 0.1 : y(element.count))
         .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count))
         .style("opacity", active.includes(element.variety) ? 1 : 0.25);
+      } else {
+        svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
+        .transition().duration(500)
+        .attr('y', element.count == 0 ? 0.1 : y(element.count))
+        .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count))
+        .style("opacity", active.includes(element.variety) ? 1 : 0.25);
+      }
     });
   } else {
     setTimeout(function (){
       $('#slider').val(rating);
       $('#sliderVal').text(rating);
       datasetBarChart[rating - 80].forEach(function(element) {
-        svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
+        if (element.count == 0){
+          svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
           .attr('y', element.count == 0 ? 0.1 : y(element.count))
-          .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count));
+          .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count))
+          .style("opacity", active.includes(element.variety) ? 1 : 0.25);
+        } else {
+          svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
+          .transition().duration(500)
+          .attr('y', element.count == 0 ? 0.1 : y(element.count))
+          .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count))
+          .style("opacity", active.includes(element.variety) ? 1 : 0.25);
+        }
       });
     }, 500);
   }
