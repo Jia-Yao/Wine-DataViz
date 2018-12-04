@@ -271,7 +271,7 @@ function drawFrance() {
       tooltip.transition().duration(200).style("opacity", .9);    
       tooltip.html("Country: " + d.country + "<br/>"
         + "Average Price: $" + parseFloat(d.price).toFixed(2) + "<br/>" 
-        + "Score: " + d.points)  
+        + "Rating: " + d.points)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
           .style("background-color", "white");
@@ -298,7 +298,7 @@ function drawUS() {
       tooltip.transition().duration(200).style("opacity", .9);    
       tooltip.html("Country: " + d.country + "<br/>"
         + "Average Price: $" + parseFloat(d.price).toFixed(2) + "<br/>" 
-        + "Score: " + d.points)  
+        + "Rating: " + d.points)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
           .style("background-color", "white");
@@ -379,8 +379,8 @@ d3.csv("data/US_France.csv").then(function(data) {
   .style("stroke", function(d) { return d.price < 1001 ? 'none' : '#444'; })
   .on("mouseover", function(d) {
     tooltip.transition().duration(200).style("opacity", .9);
-    tooltip.html(d["country"] + "<br/>" + d["variety"] + "<br/>" + "points: "+xValue(d) 
-    + "<br/>" + "price: " +yValue(d))
+    tooltip.html(d["country"] + "<br/>" + d["variety"] + "<br/>" + "Price: $"+yValue(d) 
+    + "<br/>" + "Rating: " + parseFloat(xValue(d)).toFixed(0))
       .style("left", (d3.event.pageX - 164) + "px")
       .style("top", (d3.event.pageY - 28) + "px")
       .style("background-color", "white");
