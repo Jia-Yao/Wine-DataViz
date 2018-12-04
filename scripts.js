@@ -1,5 +1,6 @@
 // =========================== Set up scrolling ===========================
 var text = d3.selectAll('.text');
+var active = varieties;
 
 function init() {
   Stickyfill.add(d3.selectAll('.graphic').node());
@@ -22,22 +23,28 @@ function update(index) {
   text.classed('is-active', function (d, i) {return i === index;});
   switch (index){
     case 0:
+      active = varieties;
       updateBarChart(80);
       break;
     case 1:
-      updateBarChart(90);
+      active = ['Chardonnay', 'Pinot Gris', 'Riesling'];
+      updateBarChart(80);
       break;
     case 2:
-      updateBarChart(95);
+      active = ['Chardonnay', 'Pinot Gris', 'Riesling'];
+      updateBarChart(96);
       break;
     case 3:
+      active = ['Rosé'];
       updateBarChart(80);
       break;
     case 4:
-      updateBarChart(90);
+      active = ['Rosé'];
+      updateBarChart(96);
       break;
     case 5:
-      updateBarChart(95);
+      active = ['Bordeaux-style Red Blend', 'Chardonnay', 'Pinot Noir'];
+      updateBarChart(98);
       break;
     case 6:
       $("#radioBordeaux").prop( "checked", true );
@@ -172,7 +179,8 @@ function updateBarChart(rating) {
     datasetBarChart[rating - 80].forEach(function(element) {
       svg1.select('#'+element.country+element.variety.replace(/\s/g, ''))
         .attr('y', element.count == 0 ? 0.1 : y(element.count))
-        .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count));
+        .attr('height', element.count == 0 ? 0.1 : h1 - y(element.count))
+        .style("opacity", active.includes(element.variety) ? 1 : 0.25);
     });
   } else {
     setTimeout(function (){
@@ -350,7 +358,7 @@ d3.csv("data/US_France.csv").then(function(data) {
   .attr("cy", function(d) { return yScaleScatter(d.points); })
   .attr("r", 3)
   .style("fill", function(d) { return color[d.country]; })
-  .style("opacity", function(d) { return d.price < 1001 ? 0.5 : 1; })
+  .style("opacity", function(d) { return d.price < 1001 ? 0.25 : 1; })
   .style("stroke", function(d) { return d.price < 1001 ? 'none' : '#444'; })
   .on("mouseover", function(d) {
     tooltip.transition().duration(200).style("opacity", .9);
