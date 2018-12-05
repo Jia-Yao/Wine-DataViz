@@ -342,7 +342,7 @@ var w3 = w3full - margin3.left - margin3.right;
 var h3 = h3full - margin3.top - margin3.bottom;
 var xScaleScatter = d3.scaleLinear().domain([0, 2500]).range([0, w3]);
 var xValue = function(d) { return d.price; }
-var yScaleScatter = d3.scaleLinear().domain([80, 100]).range([w3, 0]);
+var yScaleScatter = d3.scaleLinear().domain([79, 100]).range([h3, 0]);
 var yValue = function(d) { return d.points; }
 var svg3, legend3;
 
