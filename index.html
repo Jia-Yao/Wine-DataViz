@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Title TBD</title>
+  <title>Wine Insights</title>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
@@ -17,8 +17,8 @@
 
 <body>
   <div class="white header">
-    <h1>Title TBD</h1>
-    <h6>Subtitle</h6>
+    <h1>Wine Insights</h1>
+    <h6>CS448B 2018 Autumn</h6>
   </div>
 
   <div class="center gray credits">
@@ -26,37 +26,49 @@
   </div>
 
   <p class="limited-width">
-    INTRO - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    This is an interactive interface for uncovering insights about the difference between American and French wines. 
+    Wine price can be determined by many factors. We can discover the relationship among these attributes, and uncover insights on wine prices versus various wine properties.
+    <br>
+    <br>
+    Our work is based on a dataset from Kaggle named “Wine Reviews”. The dataset has rich data types, such as the name of winery, the variety of grape used to make the wine, the harvest year of grapes from which the wine was made, the description of each wine’s look, smell, and taste, the wine’s score rated by Wine Enthusiast Magazine, and of course the price of each wine.
+
   </p>
 
   <h4 class="center gray">
-    Section 1 Title
+    1. Which type of grape are used in different regions?
   </h4>
 
   <p class="limited-width">
-    OVERVIEW - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  	Most regions only produce a small number of wines with few varieties, so we only focus on the comparison between the top 2 wine producer: U.S and France.
+
+    In this section, we, therefore, made a broad comparison of common varieties produced in the U.S. and France. It will tell you which types of grape are more frequently used to make high-scoring wines.
+    <br>
+    <br> Note that there is a slider that locates at the top the bar chart you can use to check out any specific rating.
   </p>
 
   <div class='scroll'>
     <!--  Text on the left   -->
     <article>
       <div class='text' data-width='10%' data-index='0'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>
+        	In this bar chart, the number of wines made by Bordeaux-style Red Blend, Chardonnay, Pinot Gris, Pinot Noir, Riesling, Rosé in both U.S. and France are revealed given a specific range of wine rating.
+        	
+        </p>
       </div>
       <div class='text' data-width='90%' data-index='1'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The number of wines in the U.S. is greater than the number of wines made in France, which were both made by Chardonnay, Pinot Gris, Riesling, given rating greater than or equal to 80 </p>
       </div>
       <div class='text' data-width='50%' data-index='2'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The number of wines in the U.S. is less than the number of wines made in France, which were both made by Chardonnay, Pinot Gris, Riesling, given rating greater than or equal to 96</p>
       </div>
       <div class='text' data-width='50%' data-index='3'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The number of wines in the U.S. is less than the number of wines made in France, which were both made by Rosé, given rating greater than or equal to 80</p>
       </div>
       <div class='text' data-width='50%' data-index='4'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>Only one wine made by Rosé with rating of 96 is from the U.S.</p>
       </div>
       <div class='text' data-width='50%' data-index='5'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The wine with over 98 rating in the U.S. and France are made by Bordeaux-style Red Blend, Chardonnay, Pinot Noir.</p>
       </div>
     </article>
     
@@ -72,24 +84,24 @@
   </div>
 
   <h4 class="center gray">
-    Section 2 Title
+    Correlation between price and rating
   </h4>
 
   <p class="limited-width">
-    OVERVIEW - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    From the previous section, it concludes that Bordeaux-style Red Blend, Chardonnay, Pinot Noir are frequently used to make high-rating (above 98 out of 100) wines in both U.S. and France. By taking a closer look at the wine price against review rating, there seems to be a trend across different varieties: the price of low-scoring wines made in France is cheaper than the ones in U.S. The trend reverses around rating of 90, as the price of French wines will grow dramatically and leave U.S wines behind.
   </p>
 
   <div class='scroll'>
     <!--  Text on the left   -->
     <article>
       <div class='text' data-width='10%' data-index='6'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>For wines made by Bordeaux-style Red Blend, the price of them from France is cheaper than the price of those from U.S. before rating 94. After that, the price of France wine surpasses the U.S. wine dramatically.</p>
       </div>
       <div class='text' data-width='90%' data-index='7'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>For wines made by Chardonnay, the price of them from France suprasses the price of those from U.S. dramatically for rating greater than 93.</p>
       </div>
       <div class='text' data-width='50%' data-index='8'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>For wines made by Pinot Noir, the price of them from France suprasses the price of those from U.S. dramatically for rating greater than 93.</p>
       </div>
     </article>
     
@@ -114,24 +126,24 @@
   </div>
 
   <h4 class="center gray">
-    Section 3 Title
+    Finding Outliers
   </h4>
 
   <p class="limited-width">
-    OVERVIEW - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    In this section, the outliers have been closely looked at because they could potentially skew the correlation between price and rating from previous section. In the scatter plot below, the commonality of among outliers is found.
   </p>
 
   <div class='scroll'>
     <!--  Text on the left   -->
     <article>
       <div class='text' data-width='10%' data-index='9'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The selected wine have price of 1100 dollars or above. They are considered to be outliers.</p>
       </div>
       <div class='text' data-width='90%' data-index='10'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>The outliers are all made in France with rating 94 or above.</p>
       </div>
       <div class='text' data-width='50%' data-index='11'>
-        <p>HIGHLIGHT - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque felis imperdiet proin fermentum leo.</p>
+        <p>Thus, high-rating wine made in France might not worth the price it is labeled.</p>
       </div>
     </article>
     
@@ -141,7 +153,16 @@
   </div>
 
   <p class="limited-width">
-    END - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    In conclusion, three grape varieties, Bordeaux-style red blend, Chardonnay, and Pinot Noir, have wines that have received really high rating (above 98/100) in both France and the U.S. The price of low-scoring wines made in France is cheaper than the ones in U.S. 
+    <br>
+    <br>
+    The trend reverses around rating of 90, as the price of French wines will grow dramatically and leave U.S wines behind.
+
+    <br>
+    <br>The high-rating wines made in France may not worth the price it is labeled. If you are not a big fan of high-rating wine, then wines made in France might be good. However, you want to taste high-quality wine but do not want to overpay, then American wines turn out to be a better choice.
+
+
+
   </p>
 
   <div class="header">
