@@ -271,7 +271,8 @@ function drawFrance() {
       tooltip.transition().duration(200).style("opacity", .9);    
       tooltip.html("Country: " + d.country + "<br/>"
         + "Average Price: $" + parseFloat(d.price).toFixed(2) + "<br/>" 
-        + "Rating: " + d.points)  
+        + "Rating: " + d.points + "<br/>"
+        + "Number of records: " + d.records)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
           .style("background-color", "white");
@@ -298,7 +299,8 @@ function drawUS() {
       tooltip.transition().duration(200).style("opacity", .9);    
       tooltip.html("Country: " + d.country + "<br/>"
         + "Average Price: $" + parseFloat(d.price).toFixed(2) + "<br/>" 
-        + "Rating: " + d.points)  
+        + "Rating: " + d.points + "<br/>"
+        + "Number of records: " + d.records)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
           .style("background-color", "white");
