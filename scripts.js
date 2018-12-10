@@ -229,7 +229,7 @@ var xScaleLine = d3.scaleLinear().domain([80, 100]).range([0, w2]);
 var yScaleLine = d3.scaleLinear().domain([0, 900]).range([h2, 0]);
 var line_FR = d3.line().x(function(d) { return xScaleLine(d.points); }).y(function(d) { return yScaleLine(d.price); })
 var line_US = d3.line().x(function(d) { return xScaleLine(d.points); }).y(function(d) { return yScaleLine(d.price); })
-var tooltip = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0);
+var tooltip = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0).style("display", "none");
 var datasetLineChart, svg2, legend2;
 
 // Set up svg, axes, and legend
@@ -275,10 +275,11 @@ function drawFrance() {
         + "Number of records: " + d.records)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
-          .style("background-color", "white");
+          .style("background-color", "white")
+          .style("display", "block");
     })          
     .on("mouseout", function(d) {   
-      tooltip.transition().duration(500).style("opacity", 0); 
+      tooltip.transition().duration(500).style("opacity", 0).style("display", "none");
     });
 }
 
@@ -303,10 +304,11 @@ function drawUS() {
         + "Number of records: " + d.records)  
           .style("left", (d3.event.pageX - 164) + "px")   
           .style("top", (d3.event.pageY - 28) + "px")
-          .style("background-color", "white");
+          .style("background-color", "white")
+          .style("display", "block");
     })          
     .on("mouseout", function(d) {   
-      tooltip.transition().duration(500).style("opacity", 0); 
+      tooltip.transition().duration(500).style("opacity", 0).style("display", "none");
     });  
 
 }
@@ -385,10 +387,11 @@ d3.csv("data/US_France.csv").then(function(data) {
     + "<br/>" + "Price: $" + parseFloat(xValue(d)).toFixed(0))
       .style("left", (d3.event.pageX - 164) + "px")
       .style("top", (d3.event.pageY - 28) + "px")
-      .style("background-color", "white");
+      .style("background-color", "white")
+      .style("display", "block");
   })
   .on("mouseout", function(d) {
-    tooltip.transition().duration(500).style("opacity", 0);
+    tooltip.transition().duration(500).style("opacity", 0).style("display", "none");;
   });
 });
 
